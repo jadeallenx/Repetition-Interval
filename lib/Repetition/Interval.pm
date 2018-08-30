@@ -31,7 +31,7 @@ sub calculate_new_mean {
 
     return ($self->default_avg_grade() + $current_grade) / 2 if $review_cnt == 1;
 
-    return ($prev_mean/($review_cnt + 1)) + ($current_grade / ($review_count + 1));
+    return (($prev_mean*$review_cnt)/($review_cnt + 1)) + ($current_grade / ($review_cnt + 1));
 }
 
 sub schedule_next_review {
